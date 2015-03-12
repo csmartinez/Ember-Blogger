@@ -2,6 +2,7 @@ App = Ember.Application.create();
 
 App.Router.map(function() {
     this.resource('about');
+    this.resource('home');
     this.resource('emails', function() {
     this.resource('email', { path: ':email_id' });
     });

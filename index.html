@@ -8,11 +8,14 @@
   <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
 </head>
 <body>
+  <script type="text/x-handlebars" id="home">
+    <p>we're home</p>
+  </script>
 
   <script type="text/x-handlebars">
     <div class="navbar">
       <div class="navbar-inner">
-        <a class="brand" href="#">WELCOME</a>
+        <a class="brand" href="#/home">WELCOME</a>
         <ul class="nav">
           <li>{{#link-to 'emails'}}E-mails{{/link-to}}</li>
           <li>{{#link-to 'about'}}About{{/link-to}}</li>
@@ -62,7 +65,7 @@
 
   <script type="text/x-handlebars" id="about">
     <div class='about'>
-      <p><em>"Better is bread with a happy heart than wealth with vexation"</em> -Amenemope, Ancient Egyptian Pharaoh</p>
+      <p>About me</p>
       </div>
     </script>
 
