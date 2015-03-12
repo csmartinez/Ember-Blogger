@@ -3,14 +3,14 @@ App = Ember.Application.create();
 App.Router.map(function() {
     this.resource('about');
     this.resource('home');
-    this.resource('emails', function() {
-    this.resource('email', { path: ':email_id' });
+    this.resource('projects', function() {
+    this.resource('project', { path: ':project_id' });
     });
 });
 
-App.EmailsRoute = Ember.Route.extend({
+App.ProjectsRoute = Ember.Route.extend({
   model: function() {
-      return emails;
+      return projects;
   }
 });
 
@@ -18,18 +18,18 @@ Ember.Handlebars.helper('format-date', function(date) {
   return moment(date).fromNow();
 });
 
-var emails = [{
+var projects = [{
   id: '1',
-  title: "title1",
-  recipient: { address: "person@email.com" },
+  title: "Food Market",
+  recipient: { address: "http://protected-retreat-6501.herokuapp.com" },
   date: new Date('12-27-2012'),
-  excerpt: "excerpt1",
-  body: "body1",
+  excerpt: "Ruby",
+  body: "Description of project...",
 }, {
   id: '2',
-  title: "title2",
-  recipient: { address: "person@email.com"},
+  title: "Concert Tracker",
+  recipient: { address: "http://floating-beach-7010.herokuapp.com"},
   date: new Date('12-23-2012'),
-  excerpt: "excerpt2",
-  body: "body2",
+  excerpt: "Ruby",
+  body: "Description of project...",
 }];

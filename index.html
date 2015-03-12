@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Ember Starter Kit</title>
+  <title>J.M.</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
@@ -15,9 +15,9 @@
   <script type="text/x-handlebars">
     <div class="navbar">
       <div class="navbar-inner">
-        <a class="brand" href="#/home">WELCOME</a>
+        <a class="brand" href="#/home">Welcome</a>
         <ul class="nav">
-          <li>{{#link-to 'emails'}}E-mails{{/link-to}}</li>
+          <li>{{#link-to 'projects'}}Projects{{/link-to}}</li>
           <li>{{#link-to 'about'}}About{{/link-to}}</li>
         </ul>
       </div>
@@ -26,17 +26,17 @@
     {{outlet}}
   </script>
 
-  <script type="text/x-handlebars" id="emails">
+  <script type="text/x-handlebars" id="projects">
     <div class="container-fluid">
       <div class="span3">
         <table class='table'>
           <thead>
-            <tr><th>Your e-mails</th></tr>
+            <tr><th>Projects</th></tr>
           </thead>
             {{#each}}
           <tr><td>
-            {{#link-to 'email' this}}
-            {{title}} <small class='muted'>to {{recipient.address}}</small>
+            {{#link-to 'project' this}}
+            {{title}} <small class='muted'>{{excerpt}} Application</small>
             {{/link-to}}
           </td></tr>
             {{/each}}
@@ -48,9 +48,9 @@
       </div>
   </script>
 
-  <script type="text/x-handlebars" id="email">
-    <h1>{{title}}</h1>
-    <h2>sent to {{recipient.address}} <small class='muted'>{{format-date date}}</small></h2>
+  <script type="text/x-handlebars" id="project">
+    <h1>{{title}} <small class='muted'>{{format-date date}}</small></h1>
+    <h2><a>{{recipient.address}}</a></h2>
 
     <hr>
 
